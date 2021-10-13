@@ -1,6 +1,5 @@
 package mondes;
 
-import javax.lang.model.util.ElementScanner6;
 
 public class Monde{
     private int nbL;
