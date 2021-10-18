@@ -9,29 +9,31 @@ public class Monde{
     public Monde(){
         this.nbL = 10;
         this.nbC = 10;
+        this.mat = new boolean[this.nbL][this.nbC];
         for(int i=0; i<this.nbL; i++)
             for(int j=0; j<this.nbC; j++)
-                mat[i][j] = false;
+                this.mat[i][j] = false;
     }
 
     public Monde(int ligne, int col){
         this.nbL = ligne;
         this.nbC = col;
-        for(int i=0; i<this.nbL; i++)
-            for(int j=0; j<this.nbC; j++)
-                mat[i][j] = false;
-
+        this.mat = new boolean[this.nbL][this.nbC];
+        for(int i=0; i<(this.nbL-1); i++)
+            for(int j=0; j<(this.nbC-1); j++)
+                this.mat[i][j] = false;
     }
 
     public String toString(){
         String chaine="";
-        for(int i=0; i<this.nbL; i++)
+        for(int i=0; i<this.nbL; i++){
             for(int j=0; j<this.nbC; j++)
                 if( this.mat[i][j] )
                     chaine += 'o';
                 else
                     chaine += '.';
             chaine += '\n';
+        }
 
         return chaine;
             
